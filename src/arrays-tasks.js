@@ -19,9 +19,18 @@
  *    getIntervalArray(-2, 2)  => [ -2, -1, 0, 1, 2 ]
  *    getIntervalArray(0, 100) => [ 0, 1, 2, ..., 100 ]
  *    getIntervalArray(3, 3) => [ 3 ]
+ *  *    getIntervalArray(1, 5)  => [ 1, 2, 3, 4, 5 ]
+ *    getIntervalArray(-2, 2)  => [ -2, -1, 0, 1, 2 ]
+ *    getIntervalArray(0, 100) => [ 0, 1, 2, ..., 100 ]
+ *    getIntervalArray(3, 3) => [ 3 ]
  */
-function getIntervalArray(/* start, end */) {
-  throw new Error('Not implemented');
+function getIntervalArray(start, end) {
+  if (start > end || start === undefined || end === undefined) {
+    return [];
+  }
+  const length = end - start + 1;
+  const arr = Array.from({ length }, (_, i) => start + i);
+  return arr;
 }
 
 /**
